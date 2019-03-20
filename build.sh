@@ -1,18 +1,21 @@
 #!/bin/bash
 set -euo pipefail
 
+BUILD_SCRIPT_BRANCH=crux
 BUILD_BY="github@public.swineson.me"
 BUILD_TYPE=release
 BUILD_VERSION=1.2.0
 
 # download scripts
+mkdir -p /tmp/vyos-build
 pushd /tmp
 sudo apt-get install -y unzip
-curl -L https://github.com/vyos/vyos-build/archive/crux.zip -o crux.zip
-unzip crux.zip
+curl -L "https://github.com/vyos/vyos-build/archive/${BUILD_SCRIPT_BRANCH}.zip" -o build_script.zip
+unzip build_script.zip
+rm build_script.zip
 
 # build environment
-pushd vyos-build-crux
+pushd ./*
 docker build -t vyos-builder docker
 popd
 
