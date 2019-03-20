@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-BUILD_SCRIPT_BRANCH=crux
+BUILD_SCRIPT_BRANCH=${BUILD_SCRIPT_BRANCH:-crux}
 
 # download scripts
 mkdir -p /tmp/vyos-build
