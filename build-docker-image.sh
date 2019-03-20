@@ -13,7 +13,7 @@ rm build_script.zip
 
 # build environment
 pushd ./*
-docker build -t vyos-builder docker
+docker build -t vyos-builder:${BUILD_SCRIPT_BRANCH} docker
 popd
 
 popd
