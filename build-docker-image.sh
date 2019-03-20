@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
+BUILD_IMAGE_NAME=${BUILD_IMAGE_NAME:-"vyos-builder"}
 BUILD_SCRIPT_BRANCH=${BUILD_SCRIPT_BRANCH:-crux}
 
 # download scripts
@@ -13,7 +14,7 @@ rm build_script.zip
 
 # build environment
 pushd ./*
-docker build -t vyos-builder:${BUILD_SCRIPT_BRANCH} docker
+docker build -t ${BUILD_IMAGE_NAME}:${BUILD_SCRIPT_BRANCH} docker
 popd
 
 popd
