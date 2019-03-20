@@ -7,7 +7,7 @@ BUILD_VERSION=1.2.0
 
 # download scripts
 pushd /tmp
-apt-get install -y unzip
+sudo apt-get install -y unzip
 curl -L https://github.com/vyos/vyos-build/archive/crux.zip -o crux.zip
 unzip crux.zip
 
