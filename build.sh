@@ -30,7 +30,9 @@ docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${DOCKER_IMAGE}" ./config
 for var in "$@"
 do
     echo "Building $var..."
-    docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${DOCKER_IMAGE}" make -j "${var}"
+    
+    # do not set -j
+    docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${DOCKER_IMAGE}" make "${var}"
 done
 
 # collect artifacts
