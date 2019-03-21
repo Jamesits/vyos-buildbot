@@ -5,7 +5,7 @@ BUILD_BY=${BUILD_BY:-"github@public.swineson.me"}
 BUILD_TYPE=${BUILD_TYPE:-"release"}
 BUILD_VERSION=${BUILD_VERSION:-"1.2.0"}
 IMAGE_NAME=${IMAGE_NAME:-"jamesits/vyos-builder"}
-BUILD_SCRIPT_BRANCH=${BUILD_SCRIPT_BRANCH:-crux}
+BUILD_SCRIPT_BRANCH=${BUILD_SCRIPT_BRANCH:-"crux"}
 
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 
@@ -25,14 +25,14 @@ unzip build_script.zip
 # build image
 pushd "vyos-build-${BUILD_SCRIPT_BRANCH}"
 echo "configuring..."
-docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${DOCKER_IMAGE}:${BUILD_SCRIPT_BRANCH}" ./configure --architecture amd64 --build-by "${BUILD_BY}" --build-type "${BUILD_TYPE}" --version "${BUILD_VERSION}"
+docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${IMAGE_NAME}:${BUILD_SCRIPT_BRANCH}" ./configure --architecture amd64 --build-by "${BUILD_BY}" --build-type "${BUILD_TYPE}" --version "${BUILD_VERSION}"
 
 for var in "$@"
 do
     echo "Building $var..."
     
     # do not set -j
-    docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${DOCKER_IMAGE}:${BUILD_SCRIPT_BRANCH}" make "${var}"
+    docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${IMAGE_NAME}:${BUILD_SCRIPT_BRANCH}" make "${var}"
 done
 
 # collect artifacts
