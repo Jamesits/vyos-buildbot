@@ -8,16 +8,13 @@ if ! [ -x "$(command -v unzip)" ]; then
   sudo apt-get install -y unzip
 fi
 
+! rm -rf "vyos-build-${BUILD_SCRIPT_BRANCH}"
+
 # download scripts
-mkdir -p /tmp/vyos-build
-pushd /tmp/vyos-build
 curl -L "https://github.com/vyos/vyos-build/archive/${BUILD_SCRIPT_BRANCH}.zip" -o build_script.zip
 unzip build_script.zip
-rm build_script.zip
 
 # build environment
 pushd "vyos-build-${BUILD_SCRIPT_BRANCH}"
 docker build -t ${BUILD_IMAGE_NAME}:${BUILD_SCRIPT_BRANCH} docker
-popd
-
 popd
