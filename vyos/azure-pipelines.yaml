@@ -1,0 +1,41 @@
+# required variables:
+#   IMAGE_NAME
+#     The docker image name
+#     Example: jamesits/vyos-builder
+#   BUILD_SCRIPT_BRANCH
+#     A branch of https://github.com/vyos/vyos-build
+#     Available value: crux, current
+#   BUILD_BY
+#   BUILD_TYPE
+#     image type, release or development
+#   BUILD_VERSION
+
+name: $(IMAGE_TAG)-$(BUILD_SCRIPT_BRANCH)-$(Date:yyyyMMdd).$(Rev:.r)
+variables:
+  BUILD_BY: "github@public.swineson.me"
+  BUILD_TYPE: "release"
+  IMAGE_NAME: "jamesits/vyos-builder"
+
+trigger:
+  batch: false
+  branches:
+    include: [ "master" ]
+  paths:
+    include: [ "/vyos-builder/*" ]
+    exclude: [ "README.md" ]
+
+jobs:
+  - job: image
+    displayName: "build image"
+    pool:
+      vmImage: "ubuntu-16.04"
+    workspace:
+      clean: all
+    timeoutInMinutes: 120
+
+    steps:
+    - bash: 'sudo -E ${BUILD_SOURCESDIRECTORY}/build.sh iso'
+      displayName: 'image build'
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: drop'

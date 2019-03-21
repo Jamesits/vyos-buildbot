@@ -1,0 +1,50 @@
+# required variables:
+#   IMAGE_NAME
+#     The docker image name
+#     Example: jamesits/vyos-builder
+#   BUILD_SCRIPT_BRANCH
+#     A branch of https://github.com/vyos/vyos-build
+#     Available value: crux, current
+
+name: $(IMAGE_TAG)-$(BUILD_SCRIPT_BRANCH)-$(Date:yyyyMMdd).$(Rev:.r)
+variables:
+  IMAGE_NAME: "jamesits/vyos-builder"
+
+trigger:
+  batch: false
+  branches:
+    include: [ "master" ]
+  paths:
+    include: [ "/vyos-builder/*" ]
+    exclude: [ "README.md" ]
+
+jobs:
+  - job: docker
+    displayName: "docker build"
+    pool:
+      vmImage: "ubuntu-16.04"
+    workspace:
+      clean: all
+    timeoutInMinutes: 120
+
+    steps:
+    - task: Bash@3
+      displayName: 'docker build'
+      inputs:
+        targetType: filePath
+        filePath: './build-docker-image.sh'
+
+    - task: Docker@1
+      displayName: login
+      inputs:
+        containerregistrytype: 'Container Registry'
+        dockerRegistryEndpoint: Jamesits
+        command: login
+
+    - task: Docker@1
+      displayName: 'Push an image'
+      inputs:
+        containerregistrytype: 'Container Registry'
+        dockerRegistryEndpoint: Jamesits
+        command: 'Push an image'
+        imageName: '$(IMAGE_NAME):$(BUILD_SCRIPT_BRANCH)'
