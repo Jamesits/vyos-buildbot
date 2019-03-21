@@ -12,8 +12,11 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+if ! [ -x "$(command -v unzip)" ]; then
+  sudo apt-get install -y unzip
+fi
+
 # download scripts
-apt-get install -y unzip
 curl -L "https://github.com/vyos/vyos-build/archive/${BUILD_SCRIPT_BRANCH}.zip" -o build_script.zip
 unzip build_script.zip
 rm build_script.zip
