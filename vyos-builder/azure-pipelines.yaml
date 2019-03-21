@@ -1,4 +1,4 @@
-name: $(IMAGE_NAME)-$(BUILD_SCRIPT_BRANCH)-$(Date:yyyyMMdd).$(Rev:.r)
+name: $(IMAGE_NAME)-$(Date:yyyyMMdd).$(Rev:.r)
 variables:
   IMAGE_NAME: "jamesits/vyos-builder"
 
