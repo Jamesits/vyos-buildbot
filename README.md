@@ -13,9 +13,8 @@ CI Status:
 
 Branches:
 
-[![](https://images.microbadger.com/badges/version/jamesits/vyos-builder:crux.svg)](https://microbadger.com/images/jamesits/vyos-builder:crux "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/jamesits/vyos-builder:crux.svg)](https://microbadger.com/images/jamesits/vyos-builder:crux "Get your own image badge on microbadger.com")
-
-[![](https://images.microbadger.com/badges/version/jamesits/vyos-builder:current.svg)](https://microbadger.com/images/jamesits/vyos-builder:current "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/jamesits/vyos-builder:current.svg)](https://microbadger.com/images/jamesits/vyos-builder:current "Get your own image badge on microbadger.com")
+* [![](https://images.microbadger.com/badges/version/jamesits/vyos-builder:crux.svg)](https://microbadger.com/images/jamesits/vyos-builder:crux "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/jamesits/vyos-builder:crux.svg)](https://microbadger.com/images/jamesits/vyos-builder:crux "Get your own image badge on microbadger.com")
+* [![](https://images.microbadger.com/badges/version/jamesits/vyos-builder:current.svg)](https://microbadger.com/images/jamesits/vyos-builder:current "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/jamesits/vyos-builder:current.svg)](https://microbadger.com/images/jamesits/vyos-builder:current "Get your own image badge on microbadger.com")
 
 Reference: 
 * https://pgfitzgerald.wordpress.com/2019/02/11/how-to-build-a-vyos-1-2-0-iso-image/
