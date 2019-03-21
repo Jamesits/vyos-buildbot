@@ -10,7 +10,7 @@
 #     image type, release or development
 #   BUILD_VERSION
 
-name: $(BUILD_SCRIPT_BRANCH)-$(BUILD_TYPE)-$(Date:yyyyMMdd).$(Rev:.r)
+name: $(BUILD_SCRIPT_BRANCH)-$(BUILD_TYPE)-$(Date:yyyyMMdd).$(Rev:r)
 variables:
   BUILD_BY: "github@public.swineson.me"
   BUILD_TYPE: "release"
