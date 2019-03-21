@@ -16,7 +16,7 @@ unzip build_script.zip
 rm build_script.zip
 
 # build environment
-pushd $(find . -name "vyos-build-*" -type d -print -quit)
+pushd "vyos-build-${BUILD_SCRIPT_BRANCH}"
 docker build -t ${BUILD_IMAGE_NAME}:${BUILD_SCRIPT_BRANCH} docker
 popd
 
