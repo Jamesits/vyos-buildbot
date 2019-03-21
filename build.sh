@@ -37,7 +37,7 @@ done
 if [ -z ${BUILD_ARTIFACTSTAGINGDIRECTORY+x} ]; then 
    echo "Environment variable BUILD_ARTIFACTSTAGINGDIRECTORY is unset, skipping"
 else
-   ls build/
+   ls -alh build/
    
    # recurse intentionally disabled
    cp build/* ${BUILD_ARTIFACTSTAGINGDIRECTORY}
