@@ -39,7 +39,7 @@ if [ -z ${BUILD_ARTIFACTSTAGINGDIRECTORY+x} ]; then
 else
    ls build/
    
-   # recursive intentionally disabled
+   # recurse intentionally disabled
    cp build/* ${BUILD_ARTIFACTSTAGINGDIRECTORY}
 fi
 
