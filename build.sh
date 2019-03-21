@@ -13,8 +13,6 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # download scripts
-mkdir -p /tmp/vyos-build
-pushd /tmp/vyos-build
 apt-get install -y unzip
 curl -L "https://github.com/vyos/vyos-build/archive/${BUILD_SCRIPT_BRANCH}.zip" -o build_script.zip
 unzip build_script.zip
@@ -30,10 +28,6 @@ do
     echo "Building $var..."
     docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${DOCKER_IMAGE}" make -j "${var}"
 done
-
-popd
-
-popd
 
 
 
