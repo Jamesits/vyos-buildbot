@@ -33,5 +33,13 @@ do
     docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${DOCKER_IMAGE}" make -j "${var}"
 done
 
-
+# collect artifacts
+if [ -z ${BUILD_ARTIFACTSTAGINGDIRECTORY+x} ]; then 
+   echo "Environment variable BUILD_ARTIFACTSTAGINGDIRECTORY is unset, skipping"
+else
+   ls build/
+   
+   # recursive intentionally disabled
+   cp build/* ${BUILD_ARTIFACTSTAGINGDIRECTORY}
+fi
 
