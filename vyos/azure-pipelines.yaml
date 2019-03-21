@@ -10,18 +10,20 @@
 #     image type, release or development
 #   BUILD_VERSION
 
-name: $(IMAGE_TAG)-$(BUILD_SCRIPT_BRANCH)-$(Date:yyyyMMdd).$(Rev:.r)
+name: $(IMAGE_TAG)-$(Date:yyyyMMdd).$(Rev:.r)
 variables:
   BUILD_BY: "github@public.swineson.me"
   BUILD_TYPE: "release"
   IMAGE_NAME: "jamesits/vyos-builder"
+  BUILD_SCRIPT_BRANCH: "crux"
+  BUILD_VERSION: "1.2.0"
 
 trigger:
   batch: false
   branches:
     include: [ "master" ]
   paths:
-    include: [ "/vyos-builder/*" ]
+    include: [ "/vyos/*" ]
     exclude: [ "README.md" ]
 
 jobs:
@@ -33,9 +35,16 @@ jobs:
       clean: all
     timeoutInMinutes: 120
 
+    strategy:
+      matrix:
+        iso:
+          IMAGE_FORMAT: 'iso'
+
     steps:
-    - bash: 'sudo -E ${BUILD_SOURCESDIRECTORY}/build.sh iso'
+    - bash: 'sudo -E ./vyos/build.sh ${IMAGE_FORMAT}'
       displayName: 'image build'
 
     - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifact: drop'
+      displayName: 'Publish Artifact'
+      inputs:
+        artifactName: '$(IMAGE_FORMAT)'
