@@ -21,7 +21,6 @@ fi
 # download scripts
 curl -L "https://github.com/vyos/vyos-build/archive/${BUILD_SCRIPT_BRANCH}.zip" -o build_script.zip
 unzip build_script.zip
-rm build_script.zip
 
 # build image
 pushd "vyos-build-${BUILD_SCRIPT_BRANCH}"
