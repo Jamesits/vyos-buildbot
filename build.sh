@@ -23,8 +23,11 @@ docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${DOCKER_IMAGE}" ./config
 for var in "$@"
 do
     echo "Building $var..."
-    docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${DOCKER_IMAGE}" make -j "${var}"
+    sudo docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${DOCKER_IMAGE}" make -j "${var}"
 done
+
+cp build/* ${SYSTEM_ARTIFACTSTAGINGDIRECTORY}
+
 popd
 
 popd
