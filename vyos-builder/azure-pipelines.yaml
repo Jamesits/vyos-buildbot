@@ -31,7 +31,7 @@ jobs:
       displayName: 'docker build'
       inputs:
         targetType: filePath
-        filePath: './build-docker-image.sh'
+        filePath: '${BUILD_SOURCESDIRECTORY}/vyos-builder/build.sh'
 
     - task: Docker@1
       displayName: login
