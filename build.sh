@@ -31,8 +31,6 @@ do
     docker run --rm --privileged -v $(pwd):/vyos -w /vyos "${DOCKER_IMAGE}" make -j "${var}"
 done
 
-cp build/* ${SYSTEM_ARTIFACTSTAGINGDIRECTORY}
-
 popd
 
 popd
