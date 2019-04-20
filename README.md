@@ -2,7 +2,7 @@
 
 Experimental vyos 1.2.0 build bot. 
 
-An prebuilt Docker build environment is offered to speed up your building process.
+A prebuilt Docker build environment is offered to speed up your building process.
 
 CI Status:
 
