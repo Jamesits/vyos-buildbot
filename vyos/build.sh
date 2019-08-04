@@ -16,7 +16,7 @@ if ! [ -x "$(command -v unzip)" ]; then
   sudo apt-get install -y unzip
 fi
 
-! rm -rf "vyos-build-${BUILD_SCRIPT_BRANCH}"
+! rm -rf "vyos-build"
 
 # download scripts
 git clone --branch ${BUILD_SCRIPT_BRANCH} https://github.com/vyos/vyos-build.git
