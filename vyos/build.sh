@@ -3,7 +3,7 @@ set -euo pipefail
 
 BUILD_BY=${BUILD_BY:-"github@public.swineson.me"}
 BUILD_TYPE=${BUILD_TYPE:-"release"}
-BUILD_VERSION=${BUILD_VERSION:-"1.2.0"}
+BUILD_VERSION=${BUILD_VERSION:-"1.2.2"}
 IMAGE_NAME=${IMAGE_NAME:-"jamesits/vyos-builder"}
 BUILD_SCRIPT_BRANCH=${BUILD_SCRIPT_BRANCH:-"crux"}
 
