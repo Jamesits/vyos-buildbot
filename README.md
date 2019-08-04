@@ -9,7 +9,7 @@ CI Status:
 | Target               | CI                                                                                                                                                                                                                               | Artifact                                                                                     | Estimated Build Time | 
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------| --- |
 | Builder Docker Image | [![Build Status](https://dev.azure.com/nekomimiswitch/VyOS/_apis/build/status/VyOS-builder%20Docker%20image?branchName=master)](https://dev.azure.com/nekomimiswitch/VyOS/_build/latest?definitionId=47&branchName=master) | [Docker Hub](https://hub.docker.com/r/jamesits/vyos-builder) | 1 hour |
-| Image                | [![Build Status](https://dev.azure.com/nekomimiswitch/VyOS/_apis/build/status/VyOS?branchName=master)](https://dev.azure.com/nekomimiswitch/VyOS/_build/latest?definitionId=48&branchName=master)                                | Go to CI or releases to download | 40 min |
+| Image                | [![Build Status](https://dev.azure.com/nekomimiswitch/VyOS/_apis/build/status/VyOS%20Build?branchName=master)](https://dev.azure.com/nekomimiswitch/VyOS/_build/latest?definitionId=56&branchName=master)                                | Go to CI or releases to download | 40 min |
 
 Branches:
 
