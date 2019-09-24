@@ -41,6 +41,6 @@ else
    ls -alh build/
    
    # recurse intentionally disabled
-   ! cp build/* ${BUILD_ARTIFACTSTAGINGDIRECTORY}
+   ! cp -d build/* ${BUILD_ARTIFACTSTAGINGDIRECTORY}
 fi
 
