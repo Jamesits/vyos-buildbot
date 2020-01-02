@@ -16,7 +16,7 @@ variables:
   BUILD_TYPE: "release"
   IMAGE_NAME: "jamesits/vyos-builder"
   BUILD_SCRIPT_BRANCH: "crux"
-  BUILD_VERSION: "1.2.3"
+  BUILD_VERSION: "1.2.4"
 
 trigger:
   batch: false
