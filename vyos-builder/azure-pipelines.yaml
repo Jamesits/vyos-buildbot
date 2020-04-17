@@ -44,6 +44,14 @@ jobs:
       displayName: 'Push an image'
       inputs:
         containerregistrytype: 'Container Registry'
-        dockerRegistryEndpoint: Jamesits
+        dockerRegistryEndpoint: 'Docker Hub: Jamesits'
         command: 'Push an image'
         imageName: '$(IMAGE_NAME):$(BUILD_SCRIPT_BRANCH)'
+
+    - task: Docker@1
+      displayName: logout
+      inputs:
+        containerregistrytype: 'Container Registry'
+        dockerRegistryEndpoint: 'Docker Hub: Jamesits'
+        command: logout
+
