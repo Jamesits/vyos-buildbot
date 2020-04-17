@@ -40,7 +40,7 @@ jobs:
           BUILD_VERSION: '1.2.5'
           IMAGE_FORMAT: 'iso'
         1.3-iso:
-          BUILD_SCRIPT_BRANCH: 'equuleus'
+          BUILD_SCRIPT_BRANCH: 'current' # 'equuleus'
           BUILD_VERSION: '1.3.0-dev'
           IMAGE_FORMAT: 'iso'
 

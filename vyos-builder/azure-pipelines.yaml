@@ -23,8 +23,8 @@ jobs:
       matrix:
         crux:
           BUILD_SCRIPT_BRANCH: 'crux'
-        equuleus:
-          BUILD_SCRIPT_BRANCH: 'equuleus'
+        # equuleus:
+        #  BUILD_SCRIPT_BRANCH: 'equuleus'
         current:
           BUILD_SCRIPT_BRANCH: 'current'
 
