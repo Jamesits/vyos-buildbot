@@ -10,13 +10,11 @@
 #     image type, release or development
 #   BUILD_VERSION
 
-name: $(BUILD_SCRIPT_BRANCH)-$(BUILD_TYPE)-$(Date:yyyyMMdd).$(Rev:r)
+name: $(BUILD_TYPE)-$(Date:yyyyMMdd).$(Rev:r)
 variables:
   BUILD_BY: "github@public.swineson.me"
   BUILD_TYPE: "release"
   IMAGE_NAME: "jamesits/vyos-builder"
-  BUILD_SCRIPT_BRANCH: "crux"
-  BUILD_VERSION: "1.2.5"
 
 trigger:
   batch: false
@@ -37,7 +35,13 @@ jobs:
 
     strategy:
       matrix:
-        iso:
+        1.2-iso:
+          BUILD_SCRIPT_BRANCH: 'crux'
+          BUILD_VERSION: '1.2.5'
+          IMAGE_FORMAT: 'iso'
+        1.3-iso:
+          BUILD_SCRIPT_BRANCH: 'equuleus'
+          BUILD_VERSION: '1.3.0-dev'
           IMAGE_FORMAT: 'iso'
 
     steps:
@@ -48,3 +52,4 @@ jobs:
       displayName: 'Publish Artifact'
       inputs:
         artifactName: '$(IMAGE_FORMAT)'
+
