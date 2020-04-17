@@ -14,7 +14,7 @@ jobs:
   - job: docker
     displayName: "docker build"
     pool:
-      vmImage: "ubuntu-16.04"
+      vmImage: "ubuntu-latest"
     workspace:
       clean: all
     timeoutInMinutes: 120
@@ -37,7 +37,7 @@ jobs:
       displayName: login
       inputs:
         containerregistrytype: 'Container Registry'
-        dockerRegistryEndpoint: Jamesits
+        dockerRegistryEndpoint: 'Docker Hub: Jamesits'
         command: login
 
     - task: Docker@1

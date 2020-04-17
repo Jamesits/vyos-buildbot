@@ -1,6 +1,6 @@
 # vyos-buildbot
 
-Experimental vyos 1.2.0 build bot. 
+Experimental VyOS (>=1.2.0) build bot. 
 
 A prebuilt Docker build environment is offered to speed up your building process.
 
@@ -8,8 +8,8 @@ CI Status:
 
 | Target               | CI                                                                                                                                                                                                                               | Artifact                                                                                     | Estimated Build Time | 
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------| --- |
-| Builder Docker Image | [![Build Status](https://dev.azure.com/nekomimiswitch/VyOS/_apis/build/status/VyOS-builder%20Docker%20image?branchName=master)](https://dev.azure.com/nekomimiswitch/VyOS/_build/latest?definitionId=47&branchName=master) | [Docker Hub](https://hub.docker.com/r/jamesits/vyos-builder) | 1 hour |
-| Image                | [![Build Status](https://dev.azure.com/nekomimiswitch/VyOS/_apis/build/status/VyOS%20Build?branchName=master)](https://dev.azure.com/nekomimiswitch/VyOS/_build/latest?definitionId=56&branchName=master)                                | Go to CI or releases to download | 40 min |
+| Builder Docker Image | [![Build Status](https://dev.azure.com/nekomimiswitch/General/_apis/build/status/vyos-builder?branchName=master)](https://dev.azure.com/nekomimiswitch/General/_build/latest?definitionId=84&branchName=master) | [Docker Hub](https://hub.docker.com/r/jamesits/vyos-builder) | 1 hour |
+| Image                | [![Build Status](https://dev.azure.com/nekomimiswitch/General/_apis/build/status/vyos-release?branchName=master)](https://dev.azure.com/nekomimiswitch/General/_build/latest?definitionId=85&branchName=master) | Go to CI or releases to download | 40 min |
 
 Branches:
 

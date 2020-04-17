@@ -16,7 +16,7 @@ variables:
   BUILD_TYPE: "release"
   IMAGE_NAME: "jamesits/vyos-builder"
   BUILD_SCRIPT_BRANCH: "crux"
-  BUILD_VERSION: "1.2.4"
+  BUILD_VERSION: "1.2.5"
 
 trigger:
   batch: false
@@ -30,7 +30,7 @@ jobs:
   - job: image
     displayName: "build image"
     pool:
-      vmImage: "ubuntu-16.04"
+      vmImage: "ubuntu-latest"
     workspace:
       clean: all
     timeoutInMinutes: 120
