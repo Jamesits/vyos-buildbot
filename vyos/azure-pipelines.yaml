@@ -51,5 +51,5 @@ jobs:
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Artifact'
       inputs:
-        artifactName: '$(IMAGE_FORMAT)'
+        artifactName: '$(BUILD_SCRIPT_BRANCH)-$(BUILD_VERSION)-$(IMAGE_FORMAT)'
 
