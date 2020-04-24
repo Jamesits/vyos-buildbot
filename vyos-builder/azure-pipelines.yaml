@@ -1,4 +1,4 @@
-name: $(IMAGE_NAME)-$(Date:yyyyMMdd).$(Rev:r)
+name: $(Date:yyyyMMdd).$(Rev:r)
 variables:
   IMAGE_NAME: "jamesits/vyos-builder"
 
