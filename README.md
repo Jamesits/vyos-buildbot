@@ -2,7 +2,9 @@
 
 Experimental VyOS (>=1.2.0) build bot. 
 
-A prebuilt Docker build environment is offered to speed up your building process.
+Build artifacts can be found in the [releases](https://github.com/Jamesits/vyos-buildbot/releases) page. Note that they are **not tested** so I don't guarantee that they will boot at all. The version number is just for reference, they don't strictly follow these of the official releases.
+
+If you want to build it at home, a prebuilt Docker build environment is offered to speed up your building process.
 
 CI Status:
 
